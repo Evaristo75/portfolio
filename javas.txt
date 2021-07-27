@@ -1,0 +1,24 @@
+	var suite = document.getElementById("suite");
+		suite.innerHTML='<a href="galerie.php?suite=' + dataID + '">' + '<img src="logo/arrow.png"></a>';
+		
+		
+		 suite.innerHTML='<a href="galerie.php?suite=' + dataID + '">' + '<img src="logo/arrow.png"></a>';
+		 
+		 
+		 
+		 
+		 	<script>
+                             var variable_js = '<?php echo $count; ?>';
+							 console.log('variable_js : ' + variable_js);
+							 console.log('dataID : ' + dataID);				
+                             if (variable_js > 6) {
+								  var newPara = document.createElement('a');
+								  var newurl = "galerie.php?suite=";
+								  newPara.setAttribute("href", newurl);
+								  var texte = document.createTextNode("VOIR +");
+								  newPara.appendChild(texte);
+								  var para1 = document.querySelector('#pao');
+								  document.body.insertBefore(newPara,para1);
+			
+						     } 
+						</script>

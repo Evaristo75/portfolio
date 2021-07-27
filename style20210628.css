@@ -1,0 +1,1857 @@
+@font-face {
+    
+    font-family:"GillSansLight";
+    src:url("Gill\ Sans\ Light.otf");
+
+    font-family:"GillSansMedium";
+    src:url("Gill\ Sans\ Medium.otf");
+
+    font-family:"GillSansBold";
+    src:url("Gill\ Sans\ Bold.otf");
+
+    font-family:"GillSansHeavy";
+    src:url("Gill\ Sans\ Heavy.otf");
+
+    font-family:"RipleyLight";
+    src:url("Ripley-Light.ttf");
+    
+}
+
+@font-face {
+    font-family:"GillSans";
+    src:url("GillSans.otf");
+}
+    
+
+
+*{
+    margin: 0;
+    padding: 0;
+    transition:0.25s ease-in-out;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+  
+   
+}
+
+
+span {
+    display:block;
+    
+
+}
+
+#hamburger span {
+    background:#CC0033;
+}
+
+#cross span {
+    background:white;
+}
+
+
+#menu-toggle {
+      
+    width:100px;
+    height:100px;
+    position:fixed;
+    
+    z-index:1;
+}
+
+
+#menu-toggle #hamburger {
+    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor:pointer;
+    
+}
+
+
+#menu-toggle #hamburger span:nth-child(1) {
+    width: 50px;
+    height: 4px;
+    position: relative;
+    top: 24px;
+    left: 20px;
+    margin: 10px 0;
+    
+  }
+
+  #menu-toggle #hamburger span:nth-child(2) {
+    width: 30px;
+    height: 4px;
+    position: relative;
+    top: 24px;
+    left: 20px;
+    margin: 10px 0;
+    
+  }
+
+  #menu-toggle #hamburger span:nth-child(3) {
+    width: 50px;
+    height: 4px;
+    position: relative;
+    top: 24px;
+    left: 20px;
+    margin: 10px 0;
+    
+  }
+  
+  #menu-toggle #hamburger span:nth-child(1) {
+    transition-delay: 0.5s;
+  }
+  #menu-toggle #hamburger span:nth-child(2) {
+    transition-delay: 0.625s;
+  }
+  #menu-toggle #hamburger span:nth-child(3) {
+    transition-delay: 0.75s;
+  }
+  #menu-toggle #cross {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotate(45deg);
+    z-index:999;
+    cursor:pointer;
+    
+  }
+  #menu-toggle #cross span:nth-child(1) {
+    height: 0%;
+    width: 4px;
+    position: absolute;
+    top: 10%;
+    left: 48px;
+    transition-delay: 0s;
+    
+  }
+  #menu-toggle #cross span:nth-child(2) {
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    left: 10%;
+    top: 48px;
+    transition-delay: 0.25s;
+    
+  }
+  
+  #menu-toggle.open #hamburger span {
+    width: 0%;
+  }
+  #menu-toggle.open #hamburger span:nth-child(1) {
+    transition-delay: 0s;
+  }
+  #menu-toggle.open #hamburger span:nth-child(2) {
+    transition-delay: 0.125s;
+  }
+  #menu-toggle.open #hamburger span:nth-child(3) {
+    transition-delay: 0.25s;
+  }
+  #menu-toggle.open #cross span:nth-child(1) {
+    height: 80%;
+    transition-delay: 0.625s;
+    
+  }
+  #menu-toggle.open #cross span:nth-child(2) {
+    width: 80%;
+    transition-delay: 0.375s;
+    
+  }
+
+
+  #menu-toggle #menu {
+    width: 100%;
+    height: 100vh;
+    background-color: #CC0033;
+    position: fixed;
+    overflow: hidden;
+    opacity:0.9;
+    top: 0;
+    right: 100%;
+    transition: all 0.6s;
+    z-index:100 !important;
+  }
+
+  #menu-toggle.open #menu {
+    right: 0!important;
+  }
+
+  #menu-toggle #menu ul{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    list-style: none;
+}
+
+#menu-toggle #menu ul li{
+    text-align: center;
+}
+
+#menu-toggle #menu ul li a{
+    display: block;
+    text-decoration: none;
+    margin: 30px auto;
+    font-family: "GillSans";
+    font-weight:800;
+    font-size:3em;
+    color: #FFFFFF;
+
+    text-shadow: 0px 3px 3px #111821;
+    
+    opacity: 1;
+    transition: all 0.4s;
+}
+
+#menu-toggle #menu ul li a:hover{
+  color:#111821;
+  transition: all 0.8s;
+}
+
+
+
+.wrapper {
+    width:90vw;
+    margin:0 auto;
+    display:flex;
+     
+}
+
+.wrapper2 {
+  width:80%;
+  margin:0 auto;
+  min-height:100vh;
+  
+}
+
+
+.slide {
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    
+}
+
+
+#accueil {
+    
+    background-image: url(img/accueil/accueil.png);
+    background-size:cover;
+    background-position: center center;
+    
+    display:flex;
+    
+}
+
+path {
+  stroke-dasharray: 200;
+  animation-name: animate;
+  animation-duration:15s;
+  animation-timing-function: ease-in-out;
+}
+
+rect {
+  stroke-dasharray: 1800;
+    animation-name: animate;
+    animation-duration:5s;
+    animation-timing-function: ease-in-out;
+    stroke-linecap: square;
+} 
+
+@keyframes animate{
+  0%{
+      opacity: 0;
+      fill: rga(255,255,255,0);
+      stroke-dashoffset: 1800;
+  }
+  
+
+  100%{
+      opacity: 1;
+      fill: rga(255,255,255,1);
+      stroke-dashoffset: 0;
+  }
+
+}
+
+
+#logo {
+    position:absolute;
+    width:50vh;
+    height:50vh;
+    top:42%;
+    left:15%;
+    
+}
+
+
+#baseline p {
+
+  text-align:center;
+  font-family:"GillSans";
+  font-weight:300;
+  font-size:1.8em;
+  line-height:1em;
+  
+}
+
+
+#baseline {
+  margin-top:5px;
+  
+}
+
+
+.design {
+  
+  letter-spacing: 0.4em;
+  
+  color: white;
+}
+
+.photo {
+  
+  
+  letter-spacing: 0.75em;
+  
+  color: #CC0033;
+
+}
+
+#Calque_1 {
+  position:relative;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+
+}
+
+#sociaux {
+  top:50vh;
+  left:10vh;
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  transition:all 0.5s;
+  align-items:center;
+  
+}
+
+.post {
+  margin:25px 0 25px 0;
+}
+
+#sociaux div:hover{
+  transform:scale(0.8);
+  cursor:pointer;
+}
+
+#fb {
+    
+  width:12px;
+  height:23px;
+  background-image: url(logo/Facebook.png);
+  
+}
+
+#fbf {
+    
+  width:12px;
+  height:23px;
+  background-image: url(logo/Facebook.png);
+  transform:scale(0.8);
+
+}
+
+
+#insta {
+  
+  width:25px;
+  height:25px;
+  background-image: url(logo/insta.png);
+  background-repeat: no-repeat;
+
+}
+
+#instaf {
+  
+  width:25px;
+  height:25px;
+  background-image: url(logo/insta.png);
+  background-repeat: no-repeat;
+  transform:scale(0.8);
+}
+
+#linkedin {
+  width:25px;
+  height:25px;
+  background-image: url(logo/linkedin.png);
+  background-repeat: no-repeat;
+}
+
+#linkedinf {
+  width:25px;
+  height:25px;
+  background-image: url(logo/linkedin.png);
+  background-repeat: no-repeat;
+  transform:scale(0.8);
+}
+
+#twiter {
+  width:25px;
+  height:25px;
+  background-image: url(logo/twiter.png);
+  background-repeat: no-repeat;
+}
+
+#twiterf {
+  width:25px;
+  height:25px;
+  background-image: url(logo/twiter.png);
+  background-repeat: no-repeat;
+  transform:scale(0.8);
+}
+
+#apropos {
+  
+ width:100%;
+ height:100vh;
+ 
+ 
+}
+
+#presg {
+ 
+ 
+ width: 40%;
+ height: 100vh;
+ background-image: url(img/avatar.png);
+ background-size:contain;
+ background-repeat: no-repeat;
+ background-position: top center;
+ margin-top:-10%;
+ z-index:0;
+ 
+}
+
+#presd {
+  width:60%;
+  min-height: 100%;
+  margin-top:5%;
+   
+}
+  
+p#arrow {
+  
+    margin-top:50px;
+    width:100%;
+    height:24px;
+    background:url(logo/Arrow.png);
+    background-repeat: no-repeat;
+    cursor:pointer;
+    background-position: right;
+}
+
+
+#gal-container a {
+
+  font-family:"GillSans";
+  font-style:normal;
+  font-weight:100;
+  color:#CC0033;
+  font-size:1em;
+  text-decoration: none;
+  
+}
+
+
+#texte {
+  
+  background-color:#111821;
+  width:58%;
+  height:500px;
+  position:absolute;
+  top:35%;
+  left:120%;
+  transition:linear 1s;
+  z-index:2;
+  padding:2%;
+  display:flex;
+  align-items: center;
+  
+}
+
+p#pres {
+  
+  font-family:"GillSans";
+  font-style:normal;
+  font-weight:500;
+  color:white;
+  font-size:1.4em;
+  line-height:1.5em;
+  text-align:right;
+  
+}
+
+
+#texte.open {
+
+  left:42%!important
+}
+
+#fermer {
+  position:absolute;
+  left:1%;
+  top:0;
+  
+  z-index:10;
+  cursor:pointer;
+  
+}
+
+p#fermer {
+  font-family:GillSans;
+  font-style:normal;
+  font-weight: 900;
+  font-size:3em;
+  color:#CC0033;
+  
+}
+
+
+p#moi {
+  position:relative;
+  font-family:"GillSans";
+  font-style:normal;
+  font-weight:500;
+  color:black;
+  font-size:2.2em;
+  text-align:right;
+  
+  
+}
+
+
+p#accroche {
+  position:relative;
+  margin-left:30%;
+  padding-top:12%;
+  font-family:"RipleyLight";
+  font-size:5.5em;
+  line-height:0.9em;
+  
+}
+
+
+
+
+.title {
+  position:absolute;
+  top:0;
+  left:0;
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 900;
+  font-size: 19.5vw;
+  margin-top:-5%;
+  letter-spacing: -1.6vw;
+  color: rgba(204, 0, 51, 0.16);
+  z-index:0;
+    
+}
+
+.titregalerie {
+  
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 300;
+  font-size: 3.5vw;
+  letter-spacing:0.1em;
+  opacity: 0.9;
+  
+  text-align:center;
+  color:#111821;
+  z-index:0;
+}
+
+#competences {
+
+  margin:50px auto 0;
+}
+
+p#skills {
+
+font-family: Gill Sans;
+font-style: normal;
+font-weight: 100;
+font-size: 8vw;
+
+
+color:#CC0033;
+opacity:0.12;
+
+
+}
+
+.skills {
+
+display:flex;
+margin-top:-60px;
+justify-content: space-around;
+
+
+
+}
+
+.galimg {
+  width:54px;
+  height:54px;
+  margin-left:15px;
+  background-size: contain;
+  background-position:center center;
+  background-repeat:no-repeat;
+  
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\      P  O   R  T   F  O  L  I  O      //////////////////////////////// */
+
+#portfolio {
+  
+  
+  background-color:white;
+  width:100%;
+  min-height:100vh;
+}
+
+p.port
+{
+  color:#CC0033;
+  opacity:0.08;
+  font-family: Gill Sans;
+  font-style: normal;
+  font-weight: 100;
+  font-size:16em;
+  line-height:0em;
+  writing-mode:vertical-rl;
+  letter-spacing: -0.26em;
+  text-orientation: upright;
+  position:absolute;
+  top:4%;
+  left:4%;
+  
+
+}
+
+p.folio
+{
+  color:rgba(89, 104, 116, 0.1);
+  
+  
+  font-family: Gill Sans;
+  font-style: normal;
+  font-weight: 100;
+  font-size:16em;
+  line-height:0em;
+  writing-mode:vertical-rl;
+  letter-spacing: -0.28em;
+  text-orientation: upright;
+  position:absolute;
+  top:4%;
+  right:4%;
+  
+
+}
+
+#portfolio nav{
+  width:100%;
+  position:relative;
+  height:50px;
+  
+
+}
+
+#portfolio nav ul {
+  display:flex;
+  
+  width:100%;
+  list-style:none;
+  
+}
+
+#portfolio nav ul li{
+  
+  flex:1;
+  text-align:center;
+  cursor:pointer;
+  color:#CC0033;
+  line-height:50px;
+  text-decoration:none;
+  font-weight: 100;
+  font-family: Gill Sans;
+  font-style: normal;
+  font-size:1.2em;
+}
+
+
+#portfolio nav ul li:hover{
+  color:white;
+  
+  background-color:#CC0033;
+
+}
+
+#gal-container {
+   width:100%;
+   min-height:100vh;
+   position:relative;
+   display:flex;
+   flex-wrap:wrap;
+  
+ 
+   
+
+}
+
+#tout {
+  position:relative;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  align-items:center;
+  width:100%;
+  min-height:100vh;
+ 
+}
+
+#tout2 {
+  width:100%;
+
+  position: relative;
+  
+  display:flex;
+  justify-content: center;
+}
+
+ 
+
+.galerie {
+   
+  height:350px;
+  width:350px;
+  margin:2%;
+  background-color:lightskyblue;
+  cursor:pointer;
+  background-size:cover;
+  background-position:center center;
+  background-repeat: no-repeat;
+  justify-content:center; 
+   
+}
+
+
+
+
+#pao {
+  
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  align-items:center;
+  width:100%;
+  height:100vh;
+  
+
+}
+
+
+
+#wd {
+  
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  align-items:center;
+  width:100%;
+  height:100vh;
+  
+  
+}
+
+#illu {
+  
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  align-items:center;
+  width:100%;
+  height:100vh;
+  
+ 
+}
+
+#photo {
+  
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  align-items:center;
+  width:100%;
+  height:100vh;
+  
+
+}
+
+#anim {
+  
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  align-items:center;
+  width:100%;
+  height:100%;
+  
+
+}
+
+
+.gal-group{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 120%;
+  padding: 15px;
+  transition: all 1s;
+}
+
+
+.gal-open {
+  left: 0;
+}
+
+
+
+#more {
+    
+    width:20%;
+    
+    border: none;
+    color:#CC0033;
+    font-family: 'GillSans';
+    font-weight: bold;
+    text-decoration: none;
+    font-size:1.6em;
+    text-align:center;
+    margin-left:80%;
+    
+    
+}
+
+
+
+
+#back{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left:-5px;
+  background-color:#CC0033;
+  height:50px;
+  width:180px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 10%;
+  z-index: 100;
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+  
+ 
+
+}
+
+#back img {
+  width:50px;
+}
+
+
+
+#conteneur {
+  
+  display:flex;
+  justify-content: center;
+  margin:10px 0 auto;
+  
+  
+}
+
+
+
+
+#logogalerie {
+
+  background-image: url(logo/logo.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width:100px;
+  height:100px;
+  justify-content: center;
+  
+  
+
+}
+
+#conteneur p {
+  
+  line-height:100px;
+  margin-left:10px;
+  font-family: 'GillSans';
+  font-style:normal;
+  font-weight: 100;
+  font-size: 1em;
+
+  
+}
+
+#graphic {
+  margin-right:10px;
+  color:#111821;
+  letter-spacing:0.1em;
+ 
+}
+
+#photog {
+  color:#CC0033;
+  letter-spacing:0.2em;
+}
+
+
+.fond {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s;
+ 
+}
+
+.fond a{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-shadow: 2px 2px 4px #191919;
+}
+
+
+
+.galerie:hover .fond{
+  opacity: 1;
+}
+
+
+/* detail du projet */
+
+
+#detailprojet {
+  display:flex;
+  margin:50px auto 0;
+  width:80%;
+  justify-content:center;
+  
+
+
+
+}
+
+
+
+#detailGauche {
+  
+  width:50%;
+}
+
+#detailGauche img {
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:500px;
+}
+
+#detailGauche p{
+  width: 100%;
+  position: relative;
+  
+  text-align: center;
+  font-size: 0.8em;
+}
+
+#detailDroite{
+
+  width:50%;
+}
+
+
+
+.fiche {
+  font-family: 'GillSans';
+  font-style:normal;
+  font-weight: 100;
+  font-size: 1.5em;
+
+}
+
+
+.line {
+  width:120%;
+  
+  margin-top: 15px;
+    margin-bottom: 15px;
+  border-bottom:thick dotted #CC0033;
+}
+
+
+#back2{
+  position:relative;
+  margin:0 auto;
+  margin-top:-25%;
+  background-color:#CC0033;
+  height:50px;
+  width:180px;
+  box-sizing: border-box;
+  
+
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+  
+ 
+
+}
+
+/********** C O N T A C T ***********/
+
+
+#contact {
+  position:relative;
+  width:100vw;
+  height:100vh;
+  background-color:#111821;
+  
+}
+
+p#contactbg {
+  position:absolute;
+  bottom:1%;
+  left:-2%;
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 900;
+  font-size: 21vw;
+  
+  letter-spacing: -1.6vw;
+  color: rgba(204, 0, 51, 0.16);
+  z-index:5;
+
+
+}
+
+
+#contactg {
+   width:45vw;
+   align-items:center;
+   justify-content: center;
+   
+}
+
+#email {
+   display:flex;
+   align-items: center;
+}
+
+#email img{
+  width:37px;
+  height:37px;
+  align-items:center;
+}
+
+#coordonnees p, #coordonnees p a {
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 100;
+  align-items:center;
+  color:white;
+  font-size:1em;
+}
+
+
+
+#coordonnees {
+
+  margin-left:50px;
+}
+
+#coordonnees div {
+  margin-bottom:30px;
+}
+
+#coordonnees p {
+  margin-left:15px;
+}
+
+.question {
+  width:45%;
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 100;
+  align-items:center;
+  color:white;
+  font-size:1.8em;
+  margin:100px 0 100px 50px;
+}
+
+#phone img {
+  width:41px;
+  height:41px;
+  
+
+}
+
+#localite img {
+  width:35px;
+  height:35px;
+  
+
+}
+
+#phone {
+   display:flex;
+   align-items:center;
+}
+
+#localite {
+   display:flex;
+   align-items:center;
+}
+
+#contactd {
+  width:45vw;
+  margin-top:50px;
+  display:flex;
+  justify-content: center;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  border:0;
+  outline: 0;
+  background-color: transparent;
+  border-bottom: 1px solid white;  
+  color:white;
+  opacity:0.8;
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 100;
+  font-size:1em;
+
+}
+
+textarea {
+     resize:none;
+     width:50em;
+
+}
+
+input[type=submit]{
+    background:url(logo/Arrow.png);
+    background-size:50%;
+    background-repeat: no-repeat;
+    
+    cursor:pointer;
+    width:60px;
+    height:30px;
+    border:none;
+
+}
+
+label {
+ 
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 100;
+  color:white;
+  font-size:1.2em;
+}
+
+#contactd p{
+  margin:30px auto;
+  
+}
+
+#separ {
+  margin-top:140px;
+   width:1px;
+   height:45vh;
+   background-color:white;
+   opacity:0.2;
+   align-items:center;
+   z-index:0;
+}
+
+
+#conteneurb {
+ 
+    display:flex;
+    justify-content: center;
+    margin:175px auto 0;
+    z-index:999;
+
+}
+
+
+#logogalerieb {
+
+  background-image: url(logo/logoblanc.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width:100px;
+  height:100px;
+  justify-content: center;
+  
+  
+
+}
+
+
+#conteneurb p {
+  
+  line-height:100px;
+  margin-left:10px;
+  font-family: 'GillSans';
+  font-style:normal;
+  font-weight: 100;
+  font-size: 1em;
+
+  
+}
+
+#graphicb {
+  margin-right:10px;
+  color:#CC0033;
+  letter-spacing:0.1em;
+ 
+}
+
+#photogb {
+  color:white;
+  letter-spacing:0.2em;
+}
+
+.success {
+   
+   width:100%;
+   position:absolute;
+   top:2%;
+   left:0;
+   
+   
+
+}
+
+.success p {
+  margin:0 auto;
+  
+  text-align:center;
+  color:yellowgreen;
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 100;
+  font-size:1.2em;
+
+  
+}
+
+.unsuccess {
+   width:100%;
+   position:absolute;
+   top:2%;
+   left:0;
+   
+   
+}
+
+.unsuccess p {
+  margin:0 auto;
+  text-align:center;
+  color:cyan;
+  font-family: Gill Sans;
+  font-style:normal;
+  font-weight: 100;
+  font-size:1.2em;
+
+  
+}
+
+
+/************ F O O T E R ********************/
+
+
+footer {
+  display:flex;
+  width:100%;
+  height:80px;
+  background-color: white;
+}
+
+
+footer nav{
+  width:25%;
+  height:80px;
+  background-color: white;
+}
+
+
+footer nav ul{
+  display:flex;
+  width:100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer nav ul li {
+  list-style:none;
+  line-height:80px;
+  
+  
+
+}
+
+
+footer nav ul li a{ 
+  
+  color:#111821;
+ 
+  text-decoration:none;
+  font-weight: 100;
+  font-family: Gill Sans;
+  font-style: normal;
+  font-size:0.8em;
+  text-align:center;
+
+}
+
+footer nav ul li a:hover{
+  color:#CC0033;
+
+}
+
+footer #follow {
+  display:flex;
+
+}
+
+footer #follow {
+  width:50%;
+  justify-content: center;
+}
+
+footer #follow p {
+  color:#111821;
+ 
+  text-decoration:none;
+  font-weight: 100;
+  font-family: Gill Sans;
+  font-style: normal;
+  font-size:1.2em;
+  text-align:center;
+  line-height:80px;
+  margin-right:25px;
+}
+
+.postf {
+  margin-right:25px;
+}
+
+#sociauxf {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+footer #copyright {
+  width:25%
+}
+
+footer #copyright p {
+  color:#111821;
+ 
+  text-decoration:none;
+  font-weight: 100;
+  font-family: Gill Sans;
+  font-style: normal;
+  font-size:1.2em;
+  text-align:center;
+  line-height:80px;
+}
+
+
+@media all and (max-width: 1000px){
+
+
+#logo {
+  position:absolute;
+  width:30vh;
+  height:30vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+
+
+#accueil #logo #baseline p {
+   font-size:1em;
+}
+
+.design {
+  
+  letter-spacing: 0.3em;
+  color: white;
+}
+
+.photo {
+  
+  letter-spacing: 0.6em;
+  color: #CC0033;
+}
+
+
+#sociaux {
+  top:90vh;
+  left:0;
+  width:100%;
+  position:absolute;
+  flex-direction:row;
+  transition:all 0.5s;
+  align-items:center;
+  justify-content:space-evenly;
+  
+}
+
+
+#apropos {
+  margin-top:10vh;
+}
+
+
+
+.title {
+  
+  font-size: 8em;
+  line-height:0.5em;
+  letter-spacing: 0em;
+  color: rgba(204, 0, 51, 0.16);
+  writing-mode: sideways-lr;
+  z-index:0;
+  margin-top:15%;
+    
+}
+
+#presg {
+  position:absolute;
+  width: 100%;
+  height: 62vh;
+  background-image: url(img/avatar.png);
+  
+  background-repeat: no-repeat;
+  top:55%;
+  
+  
+  transform: translatey(-50%);
+  background-position: top center;
+  background-size:55%;
+  z-index:0;
+  margin-left:2%;
+  
+ }
+
+
+p#accroche {
+  position:relative;
+  font-family:"RipleyLight";
+  font-size:3em;
+  margin-left:65%;
+  margin-top:-20%;
+  width:30%;
+  
+  
+  
+}
+
+
+#presd {
+  position:relative;
+  width:100%;
+  height:35vh;
+  margin-top:45%;
+  
+  
+  
+}
+
+
+p#moi {
+  position:relative;
+  width:60%;
+  font-size:1.5em;
+  line-height:1.2em;
+  text-align:center;
+  margin:0 auto;
+  
+}
+
+
+#competences {
+  position: relative;
+  width:60%;
+  margin-top:2%;
+ 
+ 
+  
+}
+
+p#skills {
+  font-size:4em;
+  text-align:center;
+  
+  
+  
+}
+
+
+.skills {
+  width:100%;
+  justify-content:space-evenly;
+  
+}
+
+
+.galimg {
+  margin-top:15px;
+   background-size:50%;
+   
+}
+
+
+p#arrow {
+  width:80%;
+  margin-top:20px;
+
+}
+
+#texte {
+  
+  background-color:#111821;
+  width:80%;
+  height:250px;
+  position:absolute;
+  top:0;
+  left:100%;
+  transition:linear 1s;
+  z-index:2;
+  padding:2%;
+  
+  
+  
+}
+
+p#pres {
+  font-family:"GillSans";
+  font-style:normal;
+  font-weight:300;
+  color:white;
+  width:95%;
+  font-size:1.1em;
+  line-height:1.3em;
+  text-align:center;
+  padding:2%;
+  margin:0 auto;
+  
+}
+
+
+#texte.open {
+
+  left:10%!important
+}
+
+
+
+.wrapper {
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  
+  
+}
+
+.galerie {
+  margin:5% 0 auto;
+
+}
+
+#tout {
+  justify-content:center;
+}
+
+#portfolio nav ul {
+  flex-direction:column;
+  
+  
+}
+
+#portfolio nav ul li {
+  line-height:25px;
+}
+
+#gal-container {
+  margin-top:80px;
+  min-height:100vh;
+  align-items:center;
+}
+
+#contact {
+  flex-direction: column;
+}
+
+#contactg {
+  width:100%;
+  justify-content: center;
+  
+}
+
+#coordonnees {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+#contactd {
+  width:100%;
+  padding:50px 0 0 0;
+}
+
+.question {
+  width:80%;
+  text-align:center;
+  margin: 50px 0 150px 50px;
+}
+
+#conteneurb {
+  display:none;
+}
+
+#contactd form p {
+  text-align:center;
+}
+
+
+
+#contactd form p textarea {
+  text-align:center;
+  height:8em;
+}
+
+#contactd input textarea{
+    width:80%;
+    text-align:center;
+
+}
+
+footer {
+  flex-direction: column;
+  width:100%;
+  
+}
+
+footer nav {
+  width:100%;
+  height:40px;
+}
+
+footer nav ul{
+  width:100%;
+  height:40px;
+}
+
+footer #follow {
+  width:100%;
+  height:40px;
+  display:flex;
+}
+
+footer #copyright p {
+
+  line-height:40px;
+}
+
+footer #copyright {
+  width:100%;
+  height:40px;
+}
+
+footer #follow p {
+  line-height:40px;
+}
+
+
+
+footer nav ul li {
+  text-align: center;
+}
+
+#separ {
+  display:none;
+}
+
+
+}
+
+
+@media all and (max-width: 870px){
+
+#presg {
+  top:46%;
+  height:55vh;
+  background-size:60%;
+}
+
+#texte {
+  height:330px;
+}
+
+p#pres {
+  font-size:1em;
+  line-height:1.3em;
+  padding:3%;
+}
+#detailprojet {
+  flex-direction: column;
+  
+}
+
+#detailGauche {
+  width:100%;
+  height:50vh;
+  margin:0 auto;
+  
+}
+
+#detailDroite {
+  width:100%;
+  height:40vh;
+  margin:0 auto;
+  text-align:center;
+}
+
+
+.line {
+  width:100%;
+  
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom:3px dotted #CC0033;
+}
+
+
+
+#back2{
+  
+  margin:0 auto;
+  margin-top:-10%;
+  background-color:#CC0033;
+  height:50px;
+  width:180px;
+  box-sizing: border-box;
+  
+  z-index: 100;
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+  
+ 
+
+}
+
+}
+
+@media all and (max-width: 570px){
+
+  p#accroche {
+    font-size:2em;
+  }
+
+  #presd {
+    margin-top:52%;
+  }
+
+  #texte {
+    height:450px;
+  }
+  
+  p#pres {
+    font-size:1em;
+    line-height:1.4em;
+    padding:3%;
+  }
+
+
+  p#skills {
+    font-size:3em;
+    text-align:center;
+    margin-top:50%;
+    
+    
+  }
+
+  .skills {
+    margin-top:-22%;
+  }
+  
+  #competences {
+    margin-top:-25%;
+  }
+
+  #conteneur {
+
+   font-size: 0.8em;
+  }
+
+  .titregalerie {
+    font-size:1.4em;
+  }
+
+  #detailprojet {
+    margin:0 auto;
+  }
+  
+  }
+  
+ 
