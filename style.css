@@ -749,7 +749,6 @@ p.folio
   height:350px;
   width:350px;
   margin:2%;
-  background-color:lightskyblue;
   cursor:pointer;
   background-size:cover;
   background-position:center center;
@@ -1014,10 +1013,9 @@ p.folio
 
 .line {
   width:120%;
-  
   margin-top: 15px;
-    margin-bottom: 15px;
-  border-bottom:thick dotted #CC0033;
+  margin-bottom: 15px;
+  border-bottom:thin dotted #CC0033;
 }
 
 
@@ -1777,7 +1775,7 @@ p#pres {
   
   margin-top: 15px;
   margin-bottom: 15px;
-  border-bottom:3px dotted #CC0033;
+  border-bottom:thin dotted #CC0033;
 }
 
 
