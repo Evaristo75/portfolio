@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 28 juil. 2021 à 13:55
+-- Généré le :  lun. 23 août 2021 à 11:41
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -57,13 +57,14 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `mail` varchar(255) NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`id`, `nom`, `mail`, `message`) VALUES
+(10, 'nbnbvnvb', 'nvbnvbn@gmail.com', 'jgjgjgh'),
 (9, 'Gaeta', 'evaristo_gaeta@yahoo.fr', 'Bonjour, \r\n\r\nJe souhaiterais recevoir des informations....');
 
 -- --------------------------------------------------------
@@ -106,16 +107,20 @@ CREATE TABLE IF NOT EXISTS `works` (
   `description` text NOT NULL,
   `year` smallint(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `works`
 --
 
 INSERT INTO `works` (`id`, `title`, `category`, `image`, `pdf`, `description`, `year`) VALUES
+(54, 'Challenge 2 - animation cyclique de personnages', 'animation', '2120729922animation-challenge2.JPG', NULL, 'Réalisation d\'une animation cyclique d\'un personnage + interaction avec un objet ici le ballon.', 2021),
+(53, 'Challenge 1 - animation pédagogique', 'animation', '4039440361540873626piazzaAnim.jpeg', NULL, 'animation d\'un processus de fabrication de pizzas\r\nhttps://youtu.be/UI2Z0aP0qmI', 2021),
+(52, 'Paysage', 'photographies', '387998597IMG-5304-2.jpg', NULL, 'Paysage brumeux au bord du lac de Gavers', 2021),
+(51, 'Photographie d\'un patrimoine de notre région', 'photographies', '642229938Image00020.jpg', NULL, 'Vieux cimetière de Soignies reconverti en parc publique.', 2020),
 (50, 'Lightpainting', 'photographies', '748622947Image00007.jpg', NULL, 'Atelier photo : lightpainting', 2017),
 (49, 'Atelier photo', 'photographies', '1924278970Image00006.jpg', NULL, 'Atelier photo au centre culturel de Soignies', 2017),
-(48, 'Stopmotion', 'animation', '1624495200StopMotion-Evaristo-2020.mp4-snapshot-00.18-2021.07.28-14.38.41-.jpg', NULL, 'Animation stopmotion : interaction d\'un personnage avec un objet du quotidien.\r\nTechniques utilisées : photo image par image/Adobe Premiere', 2020),
+(48, 'Stopmotion', 'animation', '1624495200StopMotion-Evaristo-2020.mp4-snapshot-00.18-2021.07.28-14.38.41-.jpg', NULL, 'Animation stopmotion : interaction d\'un personnage avec un objet du quotidien.\r\nTechniques utilisées : photo image par image/Adobe Premiere\r\nhttps://youtu.be/PMfDSPRXhGI', 2020),
 (47, 'Projet bière &quot;Kanbi&quot;', 'illustrator', '2089822689mockupkanbi5.png', NULL, 'Mockup capsule &quot;Kanbi&quot;', 2020),
 (35, 'Affiche pour le DVD &quot;Libres&quot;', 'pao', '285414786affiche-DVD-Libres.jpg', NULL, 'Réalisation d\'une affiche pour le film-documentaire &quot;Libres&quot;', 2021),
 (36, 'Affiche d\'un artiste contemporain', 'pao', '552507104artiste.JPG', NULL, 'Réalisation d\'une affiche d\'un artiste contemporain, Ryuichi Sakamoto.\r\nLa technique utilisée est photoshop.', 2019),
@@ -125,7 +130,7 @@ INSERT INTO `works` (`id`, `title`, `category`, `image`, `pdf`, `description`, `
 (40, 'Photographie d\'un patrimoine de notre région', 'photographies', '1176627601Image00003.jpg', NULL, 'Photographie d\'un patrimoine de notre région : vieux cimetière de Soignies.\r\nLégère retouche via lightroom', 2019),
 (41, 'Site pour promouvoir un objet &quot;Le Walkman&quot;', 'webdesign', '1732199562walkman.png', NULL, 'Réalisation d\'une maquette pour un site en ressuscitant l\'age d\'or du walkman.\r\nTechnique utilisée : figma', 2019),
 (42, 'Affiche pour la création d\'une bière &quot;Kanbi&quot;', 'pao', '681640781Image00004.jpg', NULL, 'Utilisation d\'un mockup enrouler publicitaire pour abris de bus.', 2020),
-(43, 'Maquette pour site internet de jeux video : Assassin\'s Creed Valhalla', 'webdesign', '346430362Image00005.jpg', NULL, 'Maquette figma du jeux Assassin\'s Creed Valhalla\r\n\r\n&lt;a href=&quot;https://www.figma.com/file/MqfITaSEXtfrA9pItsfxkg/Assassin-s-Creed?node-id=0%3A1&quot; target=\'_blank\'&gt;Lien de la maquette&lt;/a&gt;', 2021),
+(43, 'Maquette pour site internet de jeux video : Assassin\'s Creed Valhalla', 'webdesign', '346430362Image00005.jpg', NULL, 'Maquette figma du jeux Assassin\'s Creed Valhalla\r\n\r\n<a href=\"https://www.figma.com/file/MqfITaSEXtfrA9pItsfxkg/Assassin-s-Creed?node-id=0%3A1\" target=\'_blank\'>Lien de la maquette</a>', 2021),
 (44, 'Carte de visite dans le projet de la bière &quot;Kanbi&quot;', 'illustrator', '838687709cartevisite-kanbi.JPG', NULL, 'Création de cartes de visites pour &quot;Kanbi&quot;.\r\nTechnique utilisée : illustrator', 2020),
 (45, 'Jacquette DVD', 'pao', '1530983447jaquetteDVD.JPG', NULL, 'Création d\'une pochette DVD d\'un film de Steven Spielberg.\r\nTechniques utilisées : photoshop/illustrator', 2019),
 (46, 'Logo &quot;Enghien ville propre&quot;', 'illustrator', '934300631logo-ville-Enghien.png', NULL, 'Création d\'un logo pour la ville d\'Enghien sur le thème de &quot;ville propre&quot;.\r\nTechnique utilisée : illustrator', 2021);
