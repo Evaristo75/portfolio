@@ -8,6 +8,12 @@
         $id=htmlspecialchars($_GET['id']);
     }
 
+    if(isset($_GET['category']))
+    {
+
+        $categorie = ucfirst($_GET['category']);
+    }
+
     require 'connexion.php';
 
     $req = $bdd->prepare('SELECT * FROM works WHERE id=?');
@@ -29,7 +35,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style20210628.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/glightbox.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/lightbox.min.js"></script> 
 	<script type="text/javascript">
       window.addEventListener('load',()=>{
 	  
@@ -89,16 +99,35 @@
              <p id="photog">PHOTOGRAPHE</p>
         </div>
                               
-              <p class="titregalerie">Détail du projet</p>';
+              <p class="titregalerie">Détail du projet</p>
+              <p class="categorie"><?= $categorie ?></p>
 
 
+<div id="detailprojet">
+    
+                    <div id="detailGauche">
 
-<div id="detailprojet" class="slide">
-             
-            
-                   <div id="detailGauche">
-                        <a href="upload/<?= $don['image'] ?>" ><img src="upload/<?= $don['image'] ?>" alt="image de <?= $don['title'] ?>"></a><br>
-                        <p>Cliquez pour agrandir</p>
+                    <?php                     
+                        if (isset($_GET['category'])) {
+	                        if ($_GET['category'] !== 'animation' ) {
+				
+				                echo '<a href="upload/'.$don['image'].'" ';
+				                echo 'data-lightbox="image" data-title="'.$don['title'].'">';
+				                echo '<img src="upload/'.$don['image'].'" alt="image de '.$don['title'].'"></a><br>';
+				                echo '<p>Cliquez pour agrandir</p>';
+							
+			                } else
+			
+			                { 
+				
+				                echo '<a href="'. stristr($don['description'],'https://').'" class="gal">';
+				                echo '<img src="upload/'.$don['image'].'" alt="image de '.$don['title'].'"></a><br>';
+				                echo '<p>Cliquez pour visioner</p>';
+							
+			                }
+	        
+                        }
+                    ?>
                     
                     </div>
 
@@ -115,11 +144,18 @@
 
                    </div>
     </div> 
-               <div id="back2">
-               <a href="index.php#portfolio"> <img src="logo/arrow2.png"></a>
-               </div>
-           
-
+    
+    <div id="back2">
+        <a href="index.php#portfolio"> <img src="logo/arrow2.png"></a>
+    </div>
+        
+    <script src="js/glightbox.js"></script>
+    <script>
+        var lightbox = GLightbox();
+        var lightboxDescription = GLightbox({
+            selector: '.gal',
+        });
+    </script>
 </body>
 </html>     
 	

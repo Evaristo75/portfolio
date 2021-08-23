@@ -229,7 +229,6 @@ span {
 .wrapper2 {
   width:80%;
   margin:0 auto;
-  min-height:100vh;
   
 }
 
@@ -296,10 +295,7 @@ rect {
 
 #baseline p {
 
-  text-align:center;
-  font-family:"GillSans";
-  font-weight:300;
-  font-size:1.8em;
+  
   line-height:1em;
   
 }
@@ -314,17 +310,37 @@ rect {
 .design {
   
   letter-spacing: 0.4em;
+  color:white;
   
-  color: white;
+ 
+}
+
+
+p.design {
+  text-align:center;
+  font-family:"GillSans";
+  font-weight:100;
+  font-size:1.8em;
+  line-height:1em;
+  
+
 }
 
 .photo {
   
   
-  letter-spacing: 0.75em;
+  letter-spacing: 0.02em;
   
   color: #CC0033;
+  margin-top:-15px;
+  z-index:-1;
 
+}
+
+p.photo {
+  text-align:center;
+  font-family:"RipleyLight";
+  font-size:3.5em;
 }
 
 #Calque_1 {
@@ -434,7 +450,7 @@ rect {
  
  
  width: 40%;
- height: 100vh;
+ height: 70vh;
  background-image: url(img/avatar.png);
  background-size:contain;
  background-repeat: no-repeat;
@@ -578,10 +594,21 @@ p#accroche {
   font-size: 3.5vw;
   letter-spacing:0.1em;
   opacity: 0.9;
-  
   text-align:center;
   color:#111821;
   z-index:0;
+}
+
+.categorie {
+  font-family:"RipleyLight";
+  font-size:3.5em;
+  position: relative;
+  color: rgba(204, 0, 51, 0.6);
+  text-align:center;
+  margin-top:-35px;
+  
+  
+  
 }
 
 #competences {
@@ -623,6 +650,31 @@ justify-content: space-around;
   
 }
 
+.content{
+  opacity:0;
+  width:100%;
+  height:100%;
+  
+  
+}
+
+.content p {
+  color:#CC0033;
+  font-family: Gill Sans;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 1.5em;
+  padding-top:60px;
+
+}
+
+.galimg:hover .content{
+  opacity:1;
+  
+  
+
+}
+
 /* \\\\\\\\\\\\\\\\\\\\\      P  O   R  T   F  O  L  I  O      //////////////////////////////// */
 
 #portfolio {
@@ -630,8 +682,10 @@ justify-content: space-around;
   
   background-color:white;
   width:100%;
-  min-height:100vh;
+  
+  
 }
+
 
 p.port
 {
@@ -716,6 +770,7 @@ p.folio
    position:relative;
    display:flex;
    flex-wrap:wrap;
+   
   
  
    
@@ -727,19 +782,37 @@ p.folio
   display:flex;
   flex-wrap:wrap;
   justify-content:space-evenly;
-  align-items:center;
   width:100%;
-  min-height:100vh;
+  
+  
  
 }
 
 #tout2 {
-  width:100%;
-
-  position: relative;
   
+  width:300px;
+  height:80px;
+  border: 1px solid #CC0033;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 4px 2px #CC0033;
   display:flex;
   justify-content: center;
+  
+}
+
+#tout2 p, #tout2 p a {
+  font-weight: 900;
+  font-size:1.4em;
+  
+  font-family: Gill Sans;
+  font-style: normal;
+  line-height:80px;
+  text-align:center;
+}
+
+#tout2 p a:hover {
+  transform: scale(0.8);
+  opacity:0.8;
 }
 
  
@@ -765,10 +838,10 @@ p.folio
   display:flex;
   flex-wrap:wrap;
   justify-content:space-evenly;
-  align-items:center;
-  width:100%;
-  height:100vh;
   
+  width:100%;
+  
+
 
 }
 
@@ -779,9 +852,10 @@ p.folio
   display:flex;
   flex-wrap:wrap;
   justify-content:space-evenly;
-  align-items:center;
+  
   width:100%;
-  height:100vh;
+  
+  
   
   
 }
@@ -791,9 +865,10 @@ p.folio
   display:flex;
   flex-wrap:wrap;
   justify-content:space-evenly;
-  align-items:center;
+  
   width:100%;
-  height:100vh;
+  
+  
   
  
 }
@@ -803,9 +878,10 @@ p.folio
   display:flex;
   flex-wrap:wrap;
   justify-content:space-evenly;
-  align-items:center;
+  
   width:100%;
-  height:100vh;
+  
+  
   
 
 }
@@ -817,7 +893,8 @@ p.folio
   justify-content:space-evenly;
   align-items:center;
   width:100%;
-  height:100%;
+  
+  
   
 
 }
@@ -967,6 +1044,7 @@ p.folio
   display:flex;
   margin:50px auto 0;
   width:80%;
+  height:50%;
   justify-content:center;
   
 
@@ -978,13 +1056,17 @@ p.folio
 
 #detailGauche {
   
-  width:50%;
+  width:60%;
+  height:80%;
 }
 
 #detailGauche img {
   margin-left:50%;
   transform:translateX(-50%);
   max-width:500px;
+  max-height:400px;
+  object-fit:contain;
+
 }
 
 #detailGauche p{
@@ -997,7 +1079,8 @@ p.folio
 
 #detailDroite{
 
-  width:50%;
+  width:40%;
+  
 }
 
 
@@ -1019,21 +1102,21 @@ p.folio
 }
 
 
+#bback2 {
+  display:flex;
+}
+
+
 #back2{
   position:relative;
   margin:0 auto;
-  margin-top:-25%;
   background-color:#CC0033;
   height:50px;
   width:180px;
   box-sizing: border-box;
-  
-
   display:flex;
   justify-content: center;
   align-items: center; 
-  
- 
 
 }
 
@@ -1069,6 +1152,7 @@ p#contactbg {
    width:45vw;
    align-items:center;
    justify-content: center;
+   z-index:6;
    
 }
 
@@ -1108,14 +1192,14 @@ p#contactbg {
 }
 
 .question {
-  width:45%;
+  width:80%;
   font-family: Gill Sans;
   font-style:normal;
   font-weight: 100;
   align-items:center;
   color:white;
   font-size:1.8em;
-  margin:100px 0 100px 50px;
+  padding:5%;
 }
 
 #phone img {
@@ -1147,6 +1231,7 @@ p#contactbg {
   margin-top:50px;
   display:flex;
   justify-content: center;
+  z-index:6;
 }
 
 input[type=text],
@@ -1162,24 +1247,31 @@ textarea {
   font-style:normal;
   font-weight: 100;
   font-size:1em;
+  width:50vw;
+  text-align:left;
 
 }
 
 textarea {
      resize:none;
-     width:50em;
+     
 
 }
 
 input[type=submit]{
-    background:url(logo/Arrow.png);
-    background-size:50%;
-    background-repeat: no-repeat;
-    
-    cursor:pointer;
-    width:60px;
-    height:30px;
-    border:none;
+   color:#CC0033;
+   background-color: transparent;
+   letter-spacing: 0.1em;
+   font-family: Gill Sans;
+   font-style:normal;
+   font-weight: 500;
+   font-size:1.4em;
+   text-align:left;
+   border:none;
+   cursor:pointer;
+   
+   
+
 
 }
 
@@ -1237,15 +1329,15 @@ label {
   
   line-height:100px;
   margin-left:10px;
-  font-family: 'GillSans';
-  font-style:normal;
-  font-weight: 100;
-  font-size: 1em;
-
+  
   
 }
 
 #graphicb {
+  font-family: 'GillSans';
+  font-style:normal;
+  font-weight: 100;
+  font-size: 1em;
   margin-right:10px;
   color:#CC0033;
   letter-spacing:0.1em;
@@ -1254,7 +1346,10 @@ label {
 
 #photogb {
   color:white;
-  letter-spacing:0.2em;
+  letter-spacing:0.02em;
+  font-family:"RipleyLight";
+  font-size:1.8em;
+
 }
 
 .success {
@@ -1309,14 +1404,14 @@ label {
 footer {
   display:flex;
   width:100%;
-  height:80px;
+  height:60px;
   background-color: white;
 }
 
 
 footer nav{
   width:25%;
-  height:80px;
+  height:60px;
   background-color: white;
 }
 
@@ -1330,7 +1425,7 @@ footer nav ul{
 
 footer nav ul li {
   list-style:none;
-  line-height:80px;
+  line-height:60px;
   
   
 
@@ -1361,7 +1456,7 @@ footer #follow {
 }
 
 footer #follow {
-  width:50%;
+  width:25%;
   justify-content: center;
 }
 
@@ -1374,7 +1469,7 @@ footer #follow p {
   font-style: normal;
   font-size:1.2em;
   text-align:center;
-  line-height:80px;
+  line-height:60px;
   margin-right:25px;
 }
 
@@ -1391,8 +1486,26 @@ footer #follow p {
 }
 
 footer #copyright {
-  width:25%
+  width:15%
 }
+
+footer #disclaimer {
+  width:35%;
+  display:flex;
+  align-items:center;
+}
+
+footer #disclaimer p {
+  color:#111821;
+  font-weight: 100;
+  font-family: Gill Sans;
+  font-style: normal;
+  font-size:0.8em;
+  text-align:left;
+  line-height:20px;
+  
+}
+
 
 footer #copyright p {
   color:#111821;
@@ -1403,7 +1516,7 @@ footer #copyright p {
   font-style: normal;
   font-size:1.2em;
   text-align:center;
-  line-height:80px;
+  line-height:60px;
 }
 
 
@@ -1421,9 +1534,6 @@ footer #copyright p {
 }
 
 
-#accueil #logo #baseline p {
-   font-size:1em;
-}
 
 .design {
   
@@ -1431,10 +1541,20 @@ footer #copyright p {
   color: white;
 }
 
+p.design {
+  font-size:1.2em;
+}
+
 .photo {
   
-  letter-spacing: 0.6em;
+  letter-spacing: 0.02em;
   color: #CC0033;
+}
+
+p.photo {
+  margin-top:-5px;
+  font-family:"RipleyLight";
+  font-size:2.5em;
 }
 
 
@@ -1548,6 +1668,15 @@ p#skills {
 }
 
 
+.content p {
+  padding-top:40px;
+  font-size:1.2em;
+
+
+}
+
+
+
 .galimg {
   margin-top:15px;
    background-size:50%;
@@ -1604,8 +1733,8 @@ p#pres {
   height:100%;
   flex-direction: column;
   
-  
 }
+
 
 .galerie {
   margin:5% 0 auto;
@@ -1616,21 +1745,41 @@ p#pres {
   justify-content:center;
 }
 
+#tout2 {
+  width:300px;
+  height:80px;
+  border: 1px solid #CC0033;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 4px 2px #CC0033;
+  display:flex;
+  justify-content: center;
+  margin-top:8px;
+  
+}
+
+#tout2 p {
+ 
+  line-height:80px;
+  
+}
+
+
+
+
+#portfolio nav {
+  height:150px;
+  
+}
+
 #portfolio nav ul {
   flex-direction:column;
-  
-  
 }
 
 #portfolio nav ul li {
   line-height:25px;
 }
 
-#gal-container {
-  margin-top:80px;
-  min-height:100vh;
-  align-items:center;
-}
+
 
 #contact {
   flex-direction: column;
@@ -1638,6 +1787,7 @@ p#pres {
 
 #contactg {
   width:100%;
+  height:55%;
   justify-content: center;
   
 }
@@ -1647,20 +1797,30 @@ p#pres {
   top: 30%;
   left: 40%;
   transform: translate(-50%,-50%);
-}
-
+}  
 
 
 #contactd {
   width:100%;
-  padding:50px 0 0 0;
+  margin-top:10%;
 }
 
 .question {
-  width:80%;
+  width:100%;
   text-align:center;
-  margin: 50px 0 150px 50px;
+  
 }
+
+
+input[type=text],
+input[type=email],
+textarea {
+ 
+  width:80vw;
+  text-align:center;
+
+}
+
 
 #conteneurb {
   display:none;
@@ -1715,6 +1875,15 @@ footer #copyright {
   height:40px;
 }
 
+footer #disclaimer {
+  width:100%;
+  justify-content:center;
+}
+
+footer #disclaimer p {
+  text-align:center;
+}
+
 footer #follow p {
   line-height:40px;
 }
@@ -1728,6 +1897,67 @@ footer nav ul li {
 #separ {
   display:none;
 }
+
+.categorie {
+  font-size:2em;
+  margin-top:-15px;
+}
+
+#detailprojet {
+  margin:0 auto;
+}
+
+
+}
+
+@media all and (max-width: 1100px){
+
+  #detailprojet {
+    flex-direction: column;
+    height:100%;
+    
+  }
+  
+  #detailGauche {
+    width:100%;
+    height:50%;
+    margin:0 auto;
+    
+  }
+  
+  #detailDroite {
+    width:100%;
+    height:40%;
+    margin:0 auto;
+    text-align:center;
+  }
+  
+  
+  .line {
+    width:100%;
+    
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom:thin dotted #CC0033;
+  }
+  
+  
+  
+  #back2{
+    
+    margin:0 auto;
+    background-color:#CC0033;
+    height:50px;
+    width:180px;
+    box-sizing: border-box;
+    z-index: 100;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    
+   
+  
+  }
 
 
 }
@@ -1752,19 +1982,20 @@ p#pres {
 }
 #detailprojet {
   flex-direction: column;
+  height:100%;
   
 }
 
 #detailGauche {
   width:100%;
-  height:50vh;
+  height:50%;
   margin:0 auto;
   
 }
 
 #detailDroite {
   width:100%;
-  height:40vh;
+  height:40%;
   margin:0 auto;
   text-align:center;
 }
@@ -1783,12 +2014,10 @@ p#pres {
 #back2{
   
   margin:0 auto;
-  margin-top:-10%;
   background-color:#CC0033;
   height:50px;
   width:180px;
   box-sizing: border-box;
-  
   z-index: 100;
   display:flex;
   justify-content: center;
@@ -1830,13 +2059,14 @@ p#pres {
   }
 
   .skills {
-    margin-top:-22%;
+    margin-top:-20%;
   }
   
   #competences {
-    margin-top:-25%;
+    margin-top:-15%;
   }
 
+  
   #conteneur {
 
    font-size: 0.8em;
@@ -1845,6 +2075,8 @@ p#pres {
   .titregalerie {
     font-size:1.4em;
   }
+
+  
 
   #detailprojet {
     margin:0 auto;

@@ -8,6 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Evaristo Portfolio</title>
+	<link rel="icon" type="image/png" href="img/logo2.png" />
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript">
       window.addEventListener('load',()=>{
@@ -196,7 +198,7 @@
 			</svg>
 				<div id="baseline">
 					<p class="design">GRAPHIC DESIGNER</p>
-					<p class="photo">PHOTOGRAPHE</p>
+					<p class="photo">Photographe</p>
 				</div>
 		</div>
 		
@@ -245,7 +247,7 @@
                                 {
                                     
                                         
-                                    echo '<div class="galimg" style="background-image: url(upload/logo/'.$don['logo'].'"></div>';
+                                    echo '<div class="galimg" style="background-image: url(upload/logo/'.$don['logo'].'"><div class="content"><p>'.$don['title'].'</p></div></div>';
 									
 									
 								}	
@@ -285,6 +287,7 @@
                     
 
                     <div id="gal-container">
+				    
 					<div id="tout" class="gal-group gal-open">
                         
 						
@@ -304,7 +307,7 @@
                                     
                                        
                                     echo '<div class="galerie" style="background-image: url(upload/'.$don['image'].'">';
-									echo '<div class="fond"><a href="detail.php?id='.$don["id"].'">';
+									echo '<div class="fond"><a href="detail.php?id='.$don["id"].'&category='.$don["category"].'">';
 									echo '<img src="logo/arrow"></a></div></div>';
 									
 								}	
@@ -315,7 +318,7 @@
 							    
 								if ($count > 6) {
 			                         echo '<div id="tout2">';
-									 echo '<a href="galerie.php?suite=tout">VOIR +</br><img src="logo/arrow.png"></a>';
+									 echo '<p><a href="galerie.php?suite=tout">EN VOIR PLUS</a></p>';
 								     echo '</div>';
 								}
 			
@@ -323,8 +326,6 @@
 
 						  ?>
 
-                        
-						
 						
                     </div>
                     <div id="pao" class="gal-group">
@@ -342,7 +343,7 @@
                             {
 	
 								echo '<div class="galerie" style="background-image: url(upload/'.$don['image'].'">';
-								echo '<div class="fond"><a href="detail.php?id='.$don["id"].'">';
+								echo '<div class="fond"><a href="detail.php?id='.$don["id"].'&category='.$don["category"].'">';
 								echo '<img src="logo/arrow"></a></div></div>';
 	
                             }	
@@ -354,8 +355,7 @@
 								echo '<a href="galerie.php?suite=pao">VOIR +</br><img src="logo/arrow.png"></a>';
 								echo '</div>';
 						   }
-	   
-										   
+	   		   
 
                             ?>
 
@@ -372,7 +372,7 @@
                         {
 
 							echo '<div class="galerie" style="background-image: url(upload/'.$don['image'].'">';
-							echo '<div class="fond"><a href="detail.php?id='.$don["id"].'">';
+							echo '<div class="fond"><a href="detail.php?id='.$don["id"].'&category='.$don["category"].'">';
 							echo '<img src="logo/arrow"></a></div></div>';
 
                         }	
@@ -400,7 +400,7 @@
                        {
 
 						echo '<div class="galerie" style="background-image: url(upload/'.$don['image'].'">';
-						echo '<div class="fond"><a href="detail.php?id='.$don["id"].'">';
+						echo '<div class="fond"><a href="detail.php?id='.$don["id"].'&category='.$don["category"].'">';
 						echo '<img src="logo/arrow"></a></div></div>';
 
                        }	
@@ -426,7 +426,7 @@
                          while($don = $req->fetch())
                          {
 							echo '<div class="galerie" style="background-image: url(upload/'.$don['image'].'">';
-							echo '<div class="fond"><a href="detail.php?id='.$don["id"].'">';
+							echo '<div class="fond"><a href="detail.php?id='.$don["id"].'&category='.$don["category"].'">';
 							echo '<img src="logo/arrow"></a></div></div>';
 
                          }	
@@ -452,7 +452,7 @@
                         while($don = $req->fetch())
                         {
 							echo '<div class="galerie" style="background-image: url(upload/'.$don['image'].'">';
-							echo '<div class="fond"><a href="detail.php?id='.$don["id"].'">';
+							echo '<div class="fond"><a href="detail.php?id='.$don["id"].'&category='.$don["category"].'">';
 							echo '<img src="logo/arrow"></a></div></div>';
                         }	
 
@@ -509,7 +509,7 @@
 				<p><input type="email" id="mail" name="email" placeholder="Votre email"></p>
                 <p><label for="mess">Message</label></p>
                 <p><textarea rows="10" name="message" id="mess" placeholder="Votre message"></textarea></p>
-                <p><input type="submit" value="  "></p>
+                <p><input type="submit" value="ENVOYER"></p>
             </form>
 			</div>
 			<?php
@@ -536,7 +536,7 @@
              <div id="logogalerieb">
            
              </div>
-             <p id="photogb">PHOTOGRAPHE</p>
+             <p id="photogb">Photographe</p>
           </div>
 					</div>
     
@@ -567,8 +567,12 @@
 
 	</div>
 
+	<div id="disclaimer">
+         <p>Les images non libres de droits utilisées dans ce portfolio ont été utilisées dans le cadre scolaire et non à but commercial.</p>
+	</div>
+
 	<div id="copyright">
-         <p>Copyright &copy; 2021, EPSE</p>
+         <p><b>Copyright &copy; 2021, EPSE</b></p>
 	</div>
 
 

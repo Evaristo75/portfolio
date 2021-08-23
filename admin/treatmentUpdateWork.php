@@ -53,7 +53,7 @@
         {
             $err=3;
         }else{
-            $description= htmlspecialchars($_POST['description']);
+            $description= $_POST['description'];
         }
 
         if(empty($_POST['year']))
